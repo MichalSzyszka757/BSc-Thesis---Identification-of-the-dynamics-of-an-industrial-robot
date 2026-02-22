@@ -1,0 +1,5 @@
+ Program
+   Program robota
+     RuchJ
+       Punkt_orienta_1
+       Punkt_orienta_3

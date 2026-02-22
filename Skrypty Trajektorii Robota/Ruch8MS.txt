@@ -1,0 +1,19 @@
+ Program
+   Program robota
+     RuchL
+       Punkt_orienta_4
+       Punkt_orienta_3
+       Punkt_orienta_4
+     RuchJ
+       Punkt_orienta_1
+     RuchL
+       Punkt_orienta_2
+       Punkt_orienta_1
+     RuchJ
+       Punkt_orienta_7
+       Punkt_orienta_6
+     RuchL
+       Punkt_orienta_5
+       Punkt_orienta_8
+     RuchJ
+       Punkt_orienta_4

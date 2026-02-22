@@ -1,0 +1,63 @@
+def Ruch8MS():
+  step_count_b33a36cc_5d46_4d25_af83_ca8d9df7171a = 0.0
+  thread Step_Counter_Thread_e623723b_8e98_4fed_8bd0_22be5de38aed():
+    while (True):
+      step_count_b33a36cc_5d46_4d25_af83_ca8d9df7171a = step_count_b33a36cc_5d46_4d25_af83_ca8d9df7171a + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_e623723b_8e98_4fed_8bd0_22be5de38aed()
+  set_safety_mode_transition_hardness(1)
+  set_tcp(p[0.0,0.0,0.075,0.0,0.0,0.0])
+  set_payload(0.25)
+  set_gravity([0.0, 0.0, 9.82])
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_tool_voltage(24)
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  # begin: URCap Installation Node
+  #   Source: Schmalz Gripper, 4.0.3, J.Schmalz GmbH
+  #   Type: Schmalz Gripper
+  set_payload(0.25,[0.0,0.0,0.0])
+  my_daemon = rpc_factory("xmlrpc", "http://127.0.0.1:39991/RPC2")
+  # end: URCap Installation Node
+  while (True):
+    $ 1 "Program robota"
+    $ 2 "RuchL"
+    $ 3 "Punkt_orienta_4" "breakAfter"
+    movel(p[.236199050995, -.111926558659, .388816099420, 2.223298352538, -2.218765878791, -.001713065028], a=0.8, v=0.4)
+    $ 4 "Punkt_orienta_3" "breakAfter"
+    movel(p[.236723086291, -.112693560772, .087696148403, 2.225433088200, -2.210058484127, .005552717535], a=0.8, v=0.4)
+    $ 5 "Punkt_orienta_4" "breakAfter"
+    movel(p[.236199050995, -.111926558659, .388816099420, 2.223298352538, -2.218765878791, -.001713065028], a=0.8, v=0.4)
+    $ 6 "RuchJ"
+    $ 7 "Punkt_orienta_1" "breakAfter"
+    movej(get_inverse_kin(p[-.111436164005, -.220478706748, .554969908992, .005679122337, -2.219783112347, 2.217168562493], qnear=[-1.5707963267886829, -1.0471975511965976, -1.5707963267948966, -0.5235987755982988, 1.5707963267822418, 3.595266794121929E-5]), a=4.1887902047863905, v=2.0943951023931953)
+    $ 8 "RuchL"
+    $ 9 "Punkt_orienta_2" "breakAfter"
+    movel(p[-.112453553587, -.463994485749, .554199455401, .000809727474, 2.222053877235, -2.219396735261], a=1.2, v=0.5)
+    $ 10 "Punkt_orienta_1" "breakAfter"
+    movel(p[-.111436164005, -.220478706748, .554969908992, .005679122337, -2.219783112347, 2.217168562493], a=1.2, v=0.5)
+    $ 11 "RuchJ"
+    $ 12 "Punkt_orienta_7" "breakAfter"
+    movej(get_inverse_kin(p[.026451836113, .113307457104, .586567749579, -1.208630995055, -1.214860693772, 1.217945725949], qnear=[-3.14159265358685, -1.5707963267948966, 1.0471975511965976, -2.6179938779914944, 1.5708196163058679, 7.190534959011785E-5]), a=6.981317007977318, v=3.490658503988659, r=0.236)
+    $ 13 "Punkt_orienta_6" "breakAfter"
+    movej(get_inverse_kin(p[.111868754119, .378760545199, .260382138343, 3.140402924830, .003822236531, .001248685092], qnear=[-4.71238898038469, -1.9198621771941884, -1.0471975511963993, -1.7453292519945869, 1.5707716941824215, 4.835503142949241E-13]), a=6.981317007977318, v=3.490658503988659, r=0.1921)
+    $ 14 "RuchL"
+    $ 15 "Punkt_orienta_5" "breakAfter"
+    movel(p[.111746368314, .370901543357, .068403230924, 3.140398856579, .009387728319, .004243421405], a=1.2, v=0.5)
+    $ 16 "Punkt_orienta_8" "breakAfter"
+    movel(p[.111868754119, .378760545199, .260382138343, 3.140402924830, .003822236531, .001248685092], a=1.2, v=0.5)
+    $ 17 "RuchJ"
+    $ 18 "Punkt_orienta_4" "breakAfter"
+    movej(get_inverse_kin(p[.236199050995, -.111926558659, .388816099420, 2.223298352538, -2.218765878791, -.001713065028], qnear=[7.190534961409867E-5, -1.5707839171039026, -0.7853981633974483, -2.356194490192345, 1.5707963267948966, 3.5952674807236406E-5]), a=8.377580409572781, v=4.1887902047863905, r=0.05)
+  end
+end

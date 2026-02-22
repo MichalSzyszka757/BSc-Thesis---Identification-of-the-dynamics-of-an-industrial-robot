@@ -1,0 +1,48 @@
+def RuchP1MS():
+  step_count_56076823_7a1c_451b_9e0a_c7468c966887 = 0.0
+  thread Step_Counter_Thread_22a35293_f721_42f2_85c2_86b9bf51bc12():
+    while (True):
+      step_count_56076823_7a1c_451b_9e0a_c7468c966887 = step_count_56076823_7a1c_451b_9e0a_c7468c966887 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_22a35293_f721_42f2_85c2_86b9bf51bc12()
+  set_safety_mode_transition_hardness(1)
+  set_tool_voltage(24)
+  set_tcp(p[0.0,0.0,0.075,0.0,0.0,0.0])
+  set_payload(0.25)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_gravity([0.0, 0.0, 9.82])
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  # begin: URCap Installation Node
+  #   Source: Schmalz Gripper, 4.0.3, J.Schmalz GmbH
+  #   Type: Schmalz Gripper
+  set_payload(0.25,[0.0,0.0,0.0])
+  my_daemon = rpc_factory("xmlrpc", "http://127.0.0.1:39991/RPC2")
+  # end: URCap Installation Node
+  while (True):
+    $ 1 "Program robota"
+    $ 2 "RuchP"
+    $ 3 "Punkt_orienta_1" "breakAfter"
+    movep(p[.353727830932, -.111919909844, .116892811907, 2.225079203867, -2.213141820669, .002480281290], a=1.2, v=0.2, r=0.0)
+    $ 4 "Ruch po okręgu"
+    $ 5 "PunktPrzez_1" "noBreak"
+    $ 6 "PunktKońcowy_1" "breakAfter"
+    movec(p[.111942367918, .353720376978, .116903523964, 3.140399268065, .008371305483, .005456322857], p[-.353720317366, .111931223887, .116903486547, -2.214398772590, -2.226236188400, -.005086472941], a=1.2, v=0.2, r=0.001, mode=1)
+    $ 7 "Ruch po okręgu"
+    $ 8 "PunktPrzez_2" "noBreak"
+    $ 9 "PunktKońcowy_2" "breakAfter"
+    movec(p[-.111948135864, -.353720407832, .116903543641, .008365059789, -3.138069381404, -.001847374530], p[.353720417862, -.111950010806, .116903550083, 2.224997727617, -2.213167057598, .002603153663], a=1.2, v=0.2, r=0.001, mode=1)
+    $ 10 "Zatrzymaj"
+    halt
+  end
+end

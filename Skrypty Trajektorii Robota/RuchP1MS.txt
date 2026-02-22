@@ -1,0 +1,11 @@
+ Program
+   Program robota
+     RuchP
+       Punkt_orienta_1
+       Ruch po okręgu
+         PunktPrzez_1
+         PunktKońcowy_1
+       Ruch po okręgu
+         PunktPrzez_2
+         PunktKońcowy_2
+       Zatrzymaj

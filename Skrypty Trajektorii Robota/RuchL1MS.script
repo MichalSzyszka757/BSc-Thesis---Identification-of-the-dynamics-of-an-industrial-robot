@@ -1,0 +1,40 @@
+def RuchL1MS():
+  step_count_56076823_7a1c_451b_9e0a_c7468c966887 = 0.0
+  thread Step_Counter_Thread_22a35293_f721_42f2_85c2_86b9bf51bc12():
+    while (True):
+      step_count_56076823_7a1c_451b_9e0a_c7468c966887 = step_count_56076823_7a1c_451b_9e0a_c7468c966887 + 1.0
+      sync()
+    end
+  end
+  run Step_Counter_Thread_22a35293_f721_42f2_85c2_86b9bf51bc12()
+  set_safety_mode_transition_hardness(1)
+  set_tool_voltage(24)
+  set_tcp(p[0.0,0.0,0.075,0.0,0.0,0.0])
+  set_payload(0.25)
+  set_standard_analog_input_domain(0, 1)
+  set_standard_analog_input_domain(1, 1)
+  set_tool_analog_input_domain(0, 1)
+  set_tool_analog_input_domain(1, 1)
+  set_analog_outputdomain(0, 0)
+  set_analog_outputdomain(1, 0)
+  set_input_actions_to_default()
+  set_gravity([0.0, 0.0, 9.82])
+  # begin: URCap Installation Node
+  #   Source: External Control, 1.0.5, FZI Research Center for Information Technology
+  #   Type: External Control
+  # end: URCap Installation Node
+  # begin: URCap Installation Node
+  #   Source: Schmalz Gripper, 4.0.3, J.Schmalz GmbH
+  #   Type: Schmalz Gripper
+  set_payload(0.25,[0.0,0.0,0.0])
+  my_daemon = rpc_factory("xmlrpc", "http://127.0.0.1:39991/RPC2")
+  # end: URCap Installation Node
+  while (True):
+    $ 1 "Program robota"
+    $ 2 "RuchL"
+    $ 3 "Punkt_orienta_3" "breakAfter"
+    movel(p[.236723086291, -.112693560772, .087696148403, 2.225433088200, -2.210058484127, .005552717535], a=0.4, v=0.2)
+    $ 4 "Punkt_orienta_4" "breakAfter"
+    movel(p[.236199050995, -.111926558659, .388816099420, 2.223298352538, -2.218765878791, -.001713065028], a=0.4, v=0.2)
+  end
+end

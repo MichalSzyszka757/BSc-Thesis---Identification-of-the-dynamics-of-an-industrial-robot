@@ -1,0 +1,29 @@
+Legenda nazwy pliku CSV:
+1. numer: Numer "Nadgarstka" robota
+2. numer: Numer ruchu J
+3. numer: Numer ustawienia prędkości maksymalnej i przyspieszenia:
+
+RuchJ:
+Speed1 – v = 50 st/s, a = 100st/s^2
+Speed2 – V = 100 st/s, a = 200st/s^2
+Speed3 – V = 150 st/s, a = 300 st/s^2
+
+Ruch L:
+Speed1 – v = 400 mm/s, a = 800 mm/s^2
+Speed2 – v = 600 mm/s, a = 1200 mm/s^2
+Speed3 – v = 800 mm/s, a = 1600 mm/s^2
+
+Ruch P:
+Speed1 – v = 400 mm/s, a = 800 mm/s^2
+Speed2 – v = 600 mm/s, a = 1200 mm/s^2
+Speed3 – v = 800 mm/s, a = 1600 mm/s^2
+Blend with radius = 100mm
+
+Ruch 8:
+Ruch L:
+Speed – v = 800 mm/s, a = 1600 mm/s^2
+Ruch J:
+Speed3 – V = 200 st/s, a = 400 st/s^2
+
+
+4. Numer próby pobrania danych
